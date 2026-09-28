@@ -1,0 +1,22 @@
+// Add these imports near the top of your EXISTING backend/server.js
+const authRoutes = require("./routes/auth");
+const locationRoutes = require("./routes/locationRoutes");
+const profileRoutes = require("./routes/profileRoutes");
+const adminRoutes = require("./routes/adminRoutes");
+
+// After app.use(express.json()) add:
+app.use("/api/auth", authRoutes);
+app.use("/api/location", locationRoutes);
+app.use("/api/profile", profileRoutes);
+app.use("/api/admin", adminRoutes);
+
+// Before exposing the job/application routes publicly in production,
+// protect them with authMiddleware too. Example:
+// const { authMiddleware } = require("./middleware/authMiddleware");
+// app.use("/api/jobs", authMiddleware, jobRoutes);
+// app.use("/api/matches", authMiddleware, matchRoutes);
+// app.use("/api/applications", authMiddleware, applicationRoutes);
+// app.use("/api/requests", authMiddleware, requestRoutes);
+
+// IMPORTANT: keep your existing jobRoutes, matchRoutes,
+// applicationRoutes, requestRoutes and userRoutes registration.

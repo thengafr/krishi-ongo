@@ -1,0 +1,11 @@
+Run inside the mobile folder:
+
+npx expo install expo-location react-native-maps @react-native-async-storage/async-storage
+
+Then start Expo for testing:
+
+npx expo start
+
+For standalone Android after cloud API is ready:
+
+eas build -p android --profile preview
